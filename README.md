@@ -1,6 +1,5 @@
 # Buy Felicia mobile application
-This is a mobile application for buying and selling your stuff
-
+This is a mobile application for buying and selling your stuff.
 
 # Expo/React Native stuff
 >Why do I have a folder named ".expo" in my project?
