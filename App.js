@@ -1,39 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Alert, Button, Platform} from 'react-native';
 
 
 
 export default function App() {
   console.log("App executed, but not dead"); 
   return (
-    <View style={styles.container}>
-      <Text>Hello World!</Text>
-      <TextInput style={{
-          height: 40,
-          width: 100,
-          borderColor: 'gray',
-          borderWidth: 1}}
-          defaultValue="Hi, app"
+    <SafeAreaView style={styles.container}>
+      
+        <Button 
+        title="My button"
+         onPress={()=>
+        Alert.prompt("My title", "My message", text => console.log(text) )}
           />
-          {/* <Image source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQAO4JaTYCaqGzut4Ie4kSFQB8pENgbBP47A&usqp=CAU"></Image> */}
+      
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#ffff',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    
   },
-
-// const tina = {
-//   uri="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQAO4JaTYCaqGzut4Ie4kSFQB8pENgbBP47A&usqp=CAU",
-//   height=64,
-//   width=64
-// },
 
 });
